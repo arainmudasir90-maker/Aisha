@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>आशा के नाम ❤️</title>
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+    overflow:hidden;
+    font-family:Arial,sans-serif;
+}
+
+button{
+    padding:15px 35px;
+    font-size:22px;
+    border:none;
+    border-radius:50px;
+    cursor:pointer;
+    background:white;
+    color:#ff4081;
+    font-weight:bold;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+#surprise{
+    display:none;
+    text-align:center;
+}
+
+h1{
+    color:white;
+    font-size:50px;
+    animation:zoom 1s infinite alternate;
+}
+
+p{
+    color:white;
+    font-size:30px;
+}
+
+@keyframes zoom{
+    from{transform:scale(1);}
+    to{transform:scale(1.15);}
+}
+
+.emoji{
+    position:absolute;
+    font-size:30px;
+    animation:fall 4s linear infinite;
+}
+
+@keyframes fall{
+    from{
+        transform:translateY(-100px);
+        opacity:1;
+    }
+    to{
+        transform:translateY(100vh);
+        opacity:0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<button onclick="showSurprise()">✨ Click Me ✨</button>
+
+<div id="surprise">
+    <h1>💖Aisha kinnar hai💖</h1>
+    <p>🌹 YES 🌹</p>
+    <p>🥰❤️😍💖🌸✨</p>
+</div>
+
+<script>
+function showSurprise(){
+    document.querySelector("button").style.display="none";
+    document.getElementById("surprise").style.display="block";
+
+    let emojis = ["❤️","😍","🥰","💖","🌹","✨","💕"];
+
+    for(let i=0;i<50;i++){
+        let e = document.createElement("div");
+        e.className="emoji";
+        e.innerHTML=emojis[Math.floor(Math.random()*emojis.length)];
+        e.style.left=Math.random()*100+"vw";
+        e.style.animationDuration=(Math.random()*3+2)+"s";
+        document.body.appendChild(e);
+    }
+}
+</script>
+
+</body>
+</html>
